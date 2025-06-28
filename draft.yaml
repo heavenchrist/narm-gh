@@ -1,0 +1,22 @@
+models:
+  Training:
+    name: string
+    registration_end_date: datetime
+    start: datetime
+    end: datetime
+    training_mode: string
+    status: boolean default:false
+    content: text
+    user_id: foreign
+    region_id: foreign nullable
+    relationships:
+      BelongsTo: User,Region
+    indexes:
+      - unique: name,region_id
+
+  TrainingRegistration:
+    member_id: foreign:users nullable
+    training_id: foreign nullable
+    attended: boolean default:false
+    relationships:
+      BelongsTo: User,Training

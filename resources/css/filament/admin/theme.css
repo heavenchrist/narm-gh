@@ -1,0 +1,125 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+
+.fi-sidebar-nav::-webkit-scrollbar {
+  display: none;
+}
+.fi-sidebar-nav {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+aside.fi-sidebar{
+    @apply bg-gradient-to-b from-blue-900 to-blue-950 dark:bg-gradient-to-b dark:from-blue-900 dark:to-blue-950;
+
+    & .fi-sidebar-nav-groups{
+        @apply gap-y-3;
+    }
+    & .fi-sidebar-nav{
+        @apply px-4 pt-4;
+
+        & li.fi-sidebar-item{
+            & .fi-sidebar-item-label{
+                @apply text-slate-100;
+            }
+            & .fi-sidebar-item-icon{
+                @apply text-slate-100;
+            }
+            & .fi-sidebar-item-icon svg{
+                @apply text-slate-100;
+            }
+        }
+        & li.fi-sidebar-item-active, li.fi-sidebar-item:hover{
+            & .fi-sidebar-item-label, .fi-sidebar-item-icon{
+                @apply text-slate-800 dark:text-green-500;
+            }
+
+        }
+        & .fi-sidebar-group-button span, button{
+            @apply text-slate-400;
+        }
+
+    }
+
+    /** sidebar header */
+    header.fi-sidebar-header{
+        @apply h-14 bg-white; /**dark:bg-gradient-to-b dark:from-blue-900 dark:to-blue-950;**/
+        & .fi-logo{
+            @apply text-slate-100;
+        }
+    }
+
+}
+
+/** top bar */
+div.fi-topbar nav{
+    @apply h-14 ;
+}
+
+main.fi-main{
+    @apply px-2;
+}
+
+body.fi-body{
+   /* @apply bg-slate-200 dark:bg-slate-950;  h-screen m-0 rounded-none*/
+   @apply bg-[url('/public/bg/bg-1.jpg')]  bg-cover bg-no-repeat bg-center;
+   & .fi-layout{
+    & .fi-main div section header div{
+        & .fi-header-heading{
+            @apply text-red-800;
+        }
+    }
+   }
+}
+/*.fi-simple-main-ctn{
+    @apply justify-end bg-[url('/public/bg/bg-4.jpg')] bg-cover bg-no-repeat bg-center bg-blend-multiply;
+}*/
+.fi-simple-main{
+   /* @apply  flex items-center justify-center bg-blend-multiply rounded-none bg-[url('/public/bg/bg-1.jpg')] bg-cover bg-no-repeat bg-center;
+
+    & */.fi-simple-page{
+        @apply w-full;
+    }
+
+    & .fi-logo, h1, .fi-fo-field-wrp-label span{
+        @apply text-slate-900 dark:text-slate-100;
+    }
+}
+/* table */
+table.fi-ta-table{
+   /*table header*/
+   & thead tr{
+       @apply text-green-500 bg-blue-900 dark:bg-blue-950;
+       & th span{
+           @apply text-white;
+       }
+
+       & th.fi-ta-cell div.px-3.py-4{
+           @apply py-3;
+
+       }
+       & th.fi-ta-header-cell{
+        @apply py-3;
+       }
+   }
+    & thead.fi-ta-thead{
+        @apply bg-slate-200 dark:bg-slate-950;
+    }
+    /*table body*/
+    & tbody.fi-ta-tbody{
+        @apply bg-slate-200 dark:bg-slate-950;
+    }
+    & tbody tr{
+       /* @apply bg-slate-200 dark:bg-slate-950;*/
+        & td.fi-ta-cell {
+           & div.px-3.py-4{
+                @apply py-[0.3rem];
+            }
+            & button{
+                @apply py-[0.3rem];
+            }
+        }
+    }
+}
