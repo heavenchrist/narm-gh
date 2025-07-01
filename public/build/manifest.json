@@ -1,0 +1,22 @@
+{
+  "public/bg/bg-1.jpg": {
+    "file": "assets/bg-1-GGTZ2WvC.jpg",
+    "src": "public/bg/bg-1.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CT6sWdHT.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/filament/admin/theme.css": {
+    "file": "assets/theme-MoIdUUjK.css",
+    "src": "resources/css/filament/admin/theme.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-T1DpEqax.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
