@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use App\Casts\UpperCase;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Region extends Model
 {
@@ -30,8 +31,10 @@ class Region extends Model
        // LastActivityTrait::save();
 
       static::creating(function($data){
+            if(Auth::check()){
+                $data->user_id = auth()->user()->id;
+            }
 
-            $data->user_id = auth()->user()->id;
         });
      static::addGlobalScope('status', function (Builder $builder) {
             $builder->whereStatus(true);
