@@ -8,10 +8,10 @@ use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
-use App\Filament\Pages\UserDashboard;
 use Filament\Navigation\NavigationItem;
 use App\Filament\Pages\Auth\MemberLogin;
 use App\Filament\Portal\Pages\MyProfile;
+use App\Filament\Portal\Pages\MyDashboard;
 use Filament\Http\Middleware\Authenticate;
 use lockscreen\FilamentLockscreen\Lockscreen;
 use Illuminate\Session\Middleware\StartSession;
@@ -56,7 +56,7 @@ class PortalPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Portal/Pages'), for: 'App\\Filament\\Portal\\Pages')
             ->pages([
                 //Pages\Dashboard::class,
-                UserDashboard::class,
+                MyDashboard::class,
             ])
             /* ->plugin(
                 \Hasnayeen\Themes\ThemesPlugin::make()->canViewThemesPage(fn () => false),
