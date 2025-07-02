@@ -8,7 +8,6 @@ use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
-use App\Filament\Pages\AdminDashboard;
 use App\Filament\Pages\Auth\AdminLogin;
 use Filament\Http\Middleware\Authenticate;
 use lockscreen\FilamentLockscreen\Lockscreen;
@@ -52,7 +51,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                AdminDashboard::class,
+                Pages\Dashboard::class,
             ]) ->plugin(RenewPasswordPlugin::make()->passwordExpiresIn(days: 15))
             ->plugin(new Lockscreen())
 
